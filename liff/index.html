@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 <body>
-  Update 19:00
+  Update 19:15
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
@@ -67,6 +67,16 @@
     }
 
     async function sendMsg() {
+      if( liff.getContext().type !== "none" ){
+        await liff.sendMessage([
+          {
+            "type" : "sticker",
+            "stickerId":2,
+            "packageId":5
+          }
+        ])
+        alert("Sticker Send!")
+      }
     }
 
     function getContext() {
