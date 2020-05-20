@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 <body>
-  Update 19:24
+  Update 19:27
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
@@ -88,13 +88,11 @@
     }
 
     async function getUserProfile() {
-      alert("User Profile")
-      // const profile = await liff.getProfile()
-      // document.getElementById('pictureUrl').src = profile.pictureUrl
-      // document.getElementById('userId').append(profile.userId)
-      // document.getElementById('statusMessage').append(profile.statusMessage)
-      // document.getElementById('displayName').append(profile.displayName)
-      // alert(profile.displayName)
+      const profile = await liff.getProfile()
+      document.getElementById('pictureUrl').src = profile.pictureUrl
+      document.getElementById('userId').append(profile.userId)
+      document.getElementById('statusMessage').append(profile.statusMessage)
+      document.getElementById('displayName').append(profile.displayName)
     }
 
     function getEnvironment() {
@@ -104,7 +102,7 @@
         document.getElementById('accessToken').append(liff.getAccessToken())
         document.getElementById('isInClient').append(liff.isInClient())
 
-        if(liff.inInClient()){
+        if(liff.isInClient()){
           document.getElmentById('btnLogout').style.display = "none"
         } else {
           document.getElmentById('btnMsg').style.display = "none"
