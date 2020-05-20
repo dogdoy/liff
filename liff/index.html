@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 <body>
+  Update 19:00
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
@@ -69,6 +70,11 @@
     }
 
     function getContext() {
+      document.getElementById('type').append(liff.getContext().type)
+      document.getElementById('viewType').append(liff.getContext().viewType)
+      document.getElementById('utouId').append(liff.getContext().utouId)
+      document.getElementById('roomId').append(liff.getContext().roomId)
+      document.getElementById('groupId').append(liff.getContext().groupId)
     }
 
     async function getUserProfile() {
@@ -100,7 +106,7 @@
       await liff.init({ liffId: "1654246753-R31x5Evl" })
       getEnvironment()
       getUserProfile()
-      // getContext()
+      getContext()
       // getFriendship()
       // createUniversalLink()
     }
