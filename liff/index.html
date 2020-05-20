@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 <body>
-  Update 19:29
+  Update 19:35
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
@@ -79,7 +79,7 @@
       }
     }
 
-    function getContext() {
+    async function getContext() {
       document.getElementById('type').append(liff.getContext().type)
       document.getElementById('viewType').append(liff.getContext().viewType)
       document.getElementById('utouId').append(liff.getContext().utouId)
