@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 <body>
-  Update 19:35
+  Update 19:44
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
@@ -79,6 +79,15 @@
       }
     }
 
+    async function getUserProfile() {
+      const profile = await liff.getProfile()
+      document.getElementById('pictureUrl').src = profile.pictureUrl
+      document.getElementById('userId').append(profile.userId)
+      document.getElementById('statusMessage').append(profile.statusMessage)
+      document.getElementById('displayName').append(profile.displayName)
+    }
+
+
     async function getContext() {
       document.getElementById('type').append(liff.getContext().type)
       document.getElementById('viewType').append(liff.getContext().viewType)
@@ -87,13 +96,6 @@
       document.getElementById('groupId').append(liff.getContext().groupId)
     }
 
-    async function getUserProfile() {
-      const profile = await liff.getProfile()
-      document.getElementById('pictureUrl').src = profile.pictureUrl
-      document.getElementById('userId').append(profile.userId)
-      document.getElementById('statusMessage').append(profile.statusMessage)
-      document.getElementById('displayName').append(profile.displayName)
-    }
 
     function getEnvironment() {
         document.getElementById('os').append(liff.getOS())
